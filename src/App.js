@@ -1,5 +1,6 @@
 import React from 'react';
-import SeasonDisplay from './SeasonDisplay'
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 
@@ -20,20 +21,24 @@ class App extends React.Component {
     console.log('Component updated');
   }
 
-  render() {
+  getRenderContent() {
     if(this.state.errorMessage) {
 
-      return <div>Error: {this.state.errorMessage}</div>;
+      return <h1 style={{textAlign: 'center', color: 'red'}}>Error: {this.state.errorMessage}</h1>
 
     } else if(this.state.lat) {
 
-      return <div><SeasonDisplay lat={this.state.lat}/></div>;
+      return <div><SeasonDisplay lat={this.state.lat}/></div>
 
     } else {
 
-      return <div>Loading...</div>
+      return <Spinner message="Please, share your location to continue"/>
 
     }
+  }
+
+  render() {
+    return <div>{this.getRenderContent()}</div>
   }
 
 }
