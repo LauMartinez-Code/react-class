@@ -1,5 +1,5 @@
 import React from 'react';
-import './SeasonDisplay.css';
+import '../SeasonDisplay.css';
 import Clock from './Clock';
 
 const getSeason = (lat, month) => { 
@@ -34,7 +34,7 @@ const SeasonDisplay = props => {
                 Your latitude: {props.lat} <br/>
                 <h1>Season: {season}</h1>
                 <h3>{text}</h3>
-                <Clock/>
+                The time is: <Clock/>
             </div>
             <i className={`icon-rigth huge ${icon} icon`} />
         </div>

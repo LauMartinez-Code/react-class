@@ -14,9 +14,9 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div>
-        The time is: {this.state.time}
-      </div>
+      <span>
+        {this.state.time}
+      </span>
     );
   }
 }
